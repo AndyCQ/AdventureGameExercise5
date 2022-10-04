@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Player : MonoBehaviour
+public class PlayerCode : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public NavMeshAgent agent;
+    Camera mainCam;
+
     void Start()
     {
-        
+        mainCam = Camera.main;
     }
-
-    // Update is called once per frame
-    void Update()
+    void Update() 
     {
-        
+        if(Input.GetMouseButton(1)){   
+            RaycastHit hit;
+            if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
+                //casts a ray of 200 units starting from mouse (relative to camera), returns if it hits something
+                agent.SetDestination(hit.point);
+            }
+        }
     }
 }

@@ -1,18 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyCode : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public GameObject player;
+    public NavMeshAgent agent;
+
+    void Start() {
+        StartCoroutine(LookForPlayer());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    IEnumerator LookForPlayer() {
+        while(true) {
+            yield return new WaitForSeconds(0.5f);
+            agent.SetDestination(player.transform.position);
+        }
     }
 }
