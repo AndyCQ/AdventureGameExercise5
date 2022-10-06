@@ -8,6 +8,7 @@ public class Bomb : MonoBehaviour
     public float countdown = 3f;
     public float blastRadius = 5f;
     public float force = 1000f;
+
     public GameObject explosionEffect;
     bool exploded = false;
 
@@ -31,7 +32,7 @@ public class Bomb : MonoBehaviour
 
         foreach (Collider nearby in colliders) {
             if (nearby.tag == "Breakable") {
-                Destroy(nearby);
+                Destroy(nearby.gameObject);
             }
             if (nearby.tag == "Enemy") {
                 //Add forces
@@ -40,8 +41,8 @@ public class Bomb : MonoBehaviour
                     rb.AddExplosionForce(force, transform.position, blastRadius);
                 }
                 //Damage
-                Debug.Log("Ow");
-                // Insert damage script when Andy is done
+                EnemyHealth enemies = nearby.GetComponent<EnemyHealth>();
+                enemies.takeDamage(3f);
             }
         }
 
