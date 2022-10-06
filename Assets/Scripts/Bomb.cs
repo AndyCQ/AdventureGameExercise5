@@ -1,8 +1,13 @@
 using UnityEngine;
 
+// Explosion Source: GRENADE / BOMB in Unity (Tutorial) - Brackeys
+// 2017, November 1st, https://www.youtube.com/watch?v=BYL6JtUdEY0
+
 public class Bomb : MonoBehaviour
 {
     public float countdown = 3f;
+    public float blastRadius = 5f;
+    public float force = 1000f;
     public GameObject explosionEffect;
     bool exploded = false;
 
@@ -22,8 +27,23 @@ public class Bomb : MonoBehaviour
         //Show effect
         Instantiate(explosionEffect, transform.position, transform.rotation);
         //Find nearby object
-        //(OPTIONAL) Add forces
-        //Damage
+        Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
+
+        foreach (Collider nearby in colliders) {
+            if (nearby.tag == "Breakable") {
+                Destroy(nearby);
+            }
+            if (nearby.tag == "Enemy") {
+                //Add forces
+                Rigidbody rb = nearby.GetComponent<Rigidbody>();
+                if (rb != null) {
+                    rb.AddExplosionForce(force, transform.position, blastRadius);
+                }
+                //Damage
+                Debug.Log("Ow");
+                // Insert damage script when Andy is done
+            }
+        }
 
         //Remove grenade
         Destroy(gameObject);
