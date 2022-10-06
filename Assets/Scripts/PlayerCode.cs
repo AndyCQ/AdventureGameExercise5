@@ -1,10 +1,19 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCode : MonoBehaviour
 {
     public NavMeshAgent agent;
     Camera mainCam;
+    
+    public bool triggered = false;
+    //HealthBar Vars
+    public float health = 100;
+    public float maxHealth = 100;
+    public HP healthBar;
+    int hp_hit_count = 0;
 
     void Start()
     {
@@ -18,6 +27,27 @@ public class PlayerCode : MonoBehaviour
                 //casts a ray of 200 units starting from mouse (relative to camera), returns if it hits something
                 agent.SetDestination(hit.point);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch(other.tag)
+        {
+            case "TestEnemy":
+                hp_hit_count += 1;
+                print(hp_hit_count);
+                print("hit");
+                health -= 25;
+                healthBar.UpdateHealthBar();
+
+                if (hp_hit_count == 4)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+                break;
+            default:
+                break;
         }
     }
 }
