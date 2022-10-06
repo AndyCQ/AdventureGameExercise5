@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerCode : MonoBehaviour
 {
     public GameObject sword;
@@ -13,12 +14,13 @@ public class PlayerCode : MonoBehaviour
     public float bombs = 3;
     Camera mainCam;
     
-    public bool triggered = false;
     //HealthBar Vars
     public float health = 100;
     public float maxHealth = 100;
     public HP healthBar;
-    int hp_hit_count = 0;
+    public static Collider enemy;
+    float delay = 2f;
+    float time = 0f;
 
     void Start()
     {
@@ -53,26 +55,40 @@ public class PlayerCode : MonoBehaviour
                 newBomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombSpeed);
             }
         }
+
+
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        switch(other.tag)
-        {
-            case "TestEnemy":
-                hp_hit_count += 1;
-                print(hp_hit_count);
-                print("hit");
-                health -= 25;
-                healthBar.UpdateHealthBar();
 
-                if (hp_hit_count == 4)
+    void OnTriggerEnter(Collider other) {
+        enemy = other;
+    }
+
+    void OnTriggerExit(Collider other) {
+        enemy = null;
+    }
+
+    void takeDamage(Collider enemy){
+        if (enemy.CompareTag("Enemy")){
+                print("hit");
+                health -= 5;
+                healthBar.UpdateHealthBar();
+                if (health <= 0)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
-                break;
-            default:
-                break;
+                }
+    }
+
+    private void FixedUpdate() {
+            time = time + 1f * Time.deltaTime;
+            if(time >= delay){
+                time = 0f;
+                takeDamage(enemy);
         }
     }
+        
+
+
+    
 }
