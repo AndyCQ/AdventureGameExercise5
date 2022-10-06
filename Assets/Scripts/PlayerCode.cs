@@ -15,12 +15,12 @@ public class PlayerCode : MonoBehaviour
     Camera mainCam;
     
     //HealthBar Vars
-    public float health = 100;
-    public float maxHealth = 100;
+    public float health = 10;
+    public float maxHealth = 10;
     public HP healthBar;
     public static Collider enemy;
-    float delay = 2f;
-    float time = 0f;
+    //float delay = 2f;
+    //float time = 0f;
 
     void Start()
     {
@@ -55,19 +55,14 @@ public class PlayerCode : MonoBehaviour
                 newBomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombSpeed);
             }
         }
-
-
     }
 
-
-    void OnTriggerEnter(Collider other) {
-        enemy = other;
+    public void playerDamage(float amount) {
+        health -= amount;
+        healthBar.UpdateHealthBar();
+        Debug.Log("Hit");
     }
-
-    void OnTriggerExit(Collider other) {
-        enemy = null;
-    }
-
+    /*
     void takeDamage(Collider enemy){
         if (enemy.CompareTag("Enemy")){
                 print("hit");
@@ -79,16 +74,5 @@ public class PlayerCode : MonoBehaviour
                 }
                 }
     }
-
-    private void FixedUpdate() {
-            time = time + 1f * Time.deltaTime;
-            if(time >= delay){
-                time = 0f;
-                takeDamage(enemy);
-        }
-    }
-        
-
-
-    
+    */
 }
