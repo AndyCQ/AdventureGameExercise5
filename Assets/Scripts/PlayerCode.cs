@@ -13,12 +13,10 @@ public class PlayerCode : MonoBehaviour
     public float bombs = 3;
     Camera mainCam;
     
-    public bool triggered = false;
     //HealthBar Vars
     public float health = 100;
     public float maxHealth = 100;
     public HP healthBar;
-    int hp_hit_count = 0;
 
     void Start()
     {
@@ -57,22 +55,18 @@ public class PlayerCode : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch(other.tag)
-        {
-            case "TestEnemy":
-                hp_hit_count += 1;
-                print(hp_hit_count);
-                print("hit");
-                health -= 25;
-                healthBar.UpdateHealthBar();
+        if (other.CompareTag("Enemy")){
+            
+            print("hit");
+            health -= 5;
+            healthBar.UpdateHealthBar();}
 
-                if (hp_hit_count == 4)
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                }
-                break;
-            default:
-                break;
+            if (health <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            
+                
         }
-    }
+    
 }
