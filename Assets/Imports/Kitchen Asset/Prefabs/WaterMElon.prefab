@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23834363903734062}
   - component: {fileID: 8580416579881435312}
   - component: {fileID: 6964584611503143485}
+  - component: {fileID: -1612792523875651011}
   m_Layer: 0
   m_Name: WaterMElon
   m_TagString: Untagged
@@ -115,3 +116,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1612792523875651011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141620501440248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b92d471bf7e4477b64cdc9e850e571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: 3
+  blastRadius: 4
+  force: 700
+  explosionEffect: {fileID: 7146024965380779426, guid: ef4f43979821249378a639edca031bec, type: 3}

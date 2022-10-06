@@ -45,6 +45,7 @@ public class PlayerCode : MonoBehaviour
             //sword slash since regular sword system doesn't work
         }
         if(Input.GetKeyDown("space") & bombs > 0) {
+            bombs -= 1;
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 transform.LookAt(hit.point);
