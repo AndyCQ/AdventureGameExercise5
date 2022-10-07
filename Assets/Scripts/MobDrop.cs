@@ -5,9 +5,9 @@ using UnityEngine;
 public class MobDrop : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Door link;
-    public GameObject key;
-    public GameObject crown;
+    public Door link = null;
+    public GameObject key = null;
+    public GameObject crown = null;
     
     public void specialDrop() {
         GameObject newKey = Instantiate(key,gameObject.transform.position,gameObject.transform.rotation);
@@ -17,6 +17,7 @@ public class MobDrop : MonoBehaviour
     public void startBattle() {
         link.GetComponent<MeshRenderer>().enabled = true;
         link.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = true;
+        StartCoroutine(gameObject.GetComponent<BossCode>().Spawner());
     }
 
     public void bossDrop() {
