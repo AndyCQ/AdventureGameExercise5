@@ -1,7 +1,8 @@
 using UnityEngine;
+using TMPro;
 
 public class Door : MonoBehaviour
-{
+{   
     public GameObject[] keys;
     public int keyCount;
 
