@@ -25,12 +25,14 @@ public class PlayerCode : MonoBehaviour
             }
         }
         if(Input.GetMouseButtonDown(0)){
+            /*
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 transform.LookAt(hit.point);
-                GameObject newSword = Instantiate(sword,transform.position,transform.rotation);
+                GameObject newSword = Instantiate(sword,transform.position);
                 newSword.GetComponent<Rigidbody>().AddForce(transform.forward * swordSpeed);
             }
+            */
             //sword slash since regular sword system doesn't work
         }
         if(Input.GetKeyDown("space") & bombs > 0) {
