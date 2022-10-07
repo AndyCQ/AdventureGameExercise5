@@ -9,6 +9,7 @@ public class EnemyCode : MonoBehaviour
     public EnemyHealth enemyHP;
     public NavMeshAgent agent;
     public Transform target;
+    //public Aggro exclamation; Animation
     public float lookRadius = 5f;
     public float damageAmt = 1f;
     public float hitCooldown = 1f;
@@ -17,6 +18,7 @@ public class EnemyCode : MonoBehaviour
     void Update() {
         if (distance < lookRadius) {
             StartCoroutine(LookForPlayer());
+            //exclamation.Show();
         }
     }
 
