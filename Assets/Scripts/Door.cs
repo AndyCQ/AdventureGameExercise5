@@ -1,7 +1,8 @@
 using UnityEngine;
+using TMPro;
 
 public class Door : MonoBehaviour
-{
+{   
     public GameObject[] keys;
     public int keyCount;
 
@@ -12,6 +13,7 @@ public class Door : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player" && keyCount == keys.Length) {
             Destroy(gameObject);
+            PublicVars.keysAvailable -=1;
         }
     }
 }

@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class PlayerCode : MonoBehaviour
 {
@@ -11,19 +13,28 @@ public class PlayerCode : MonoBehaviour
     public float swordSpeed = 100;
     public float bombSpeed = 100;
     public float bombs = 3;
+    public float swordCooldown = 0.75f;
     Camera mainCam;
     
-    public bool triggered = false;
     //HealthBar Vars
-    public float health = 100;
-    public float maxHealth = 100;
+    public float health = 10;
+    public float maxHealth = 10;
     public HP healthBar;
-    int hp_hit_count = 0;
+    public static Collider enemy;
+    //float delay = 2f;
+    //float time = 0f;
+
+    //Canvas Vars
+    public TextMeshProUGUI bombAmount;
+    public TextMeshProUGUI KeyAmount;
 
     void Start()
     {
         mainCam = Camera.main;
+        bombAmount.text = "x " + bombs;
+        KeyAmount.text = "x " + PublicVars.keysAvailable;
     }
+
     void Update() 
     {
         if(Input.GetMouseButton(1)){   
@@ -33,18 +44,18 @@ public class PlayerCode : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
-        if(Input.GetMouseButtonDown(0)){
-            /*
+        if(Input.GetMouseButtonDown(0) && swordCooldown <= 0){
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 transform.LookAt(hit.point);
-                GameObject newSword = Instantiate(sword,transform.position);
+                GameObject newSword = Instantiate(sword,transform.position,transform.rotation);
                 newSword.GetComponent<Rigidbody>().AddForce(transform.forward * swordSpeed);
             }
-            */
+            Invoke("refreshTimer", 0.001f);
             //sword slash since regular sword system doesn't work
         }
         if(Input.GetKeyDown("space") & bombs > 0) {
+            bombs -= 1;
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 transform.LookAt(hit.point);
@@ -52,26 +63,27 @@ public class PlayerCode : MonoBehaviour
                 newBomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombSpeed);
             }
         }
+
+        bombAmount.text = "x " + bombs;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        switch(other.tag)
-        {
-            case "TestEnemy":
-                hp_hit_count += 1;
-                print(hp_hit_count);
-                print("hit");
-                health -= 25;
-                healthBar.UpdateHealthBar();
+    void refreshTimer() {
+        swordCooldown = 0.75f;
+    }
 
-                if (hp_hit_count == 4)
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                }
-                break;
-            default:
-                break;
+    void FixedUpdate() {
+        if (swordCooldown > 0) {
+            swordCooldown -= Time.deltaTime;
         }
+        if(health <= 0){
+            SceneManager.LoadScene("DeathScreen");
+        }
+        KeyAmount.text = "x " + PublicVars.keysAvailable;
+    }
+
+    public void playerDamage(float amount) {
+        health -= amount;
+        healthBar.UpdateHealthBar();
+        Debug.Log("Hit");
     }
 }
