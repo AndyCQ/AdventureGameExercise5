@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3774965374855099949
+--- !u!1001 &1492598221329316267
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612234180252938077, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_Name
-      value: Slime Enemy 1
+      value: Slime MiniBoss
       objectReference: {fileID: 0}
     - target: {fileID: 1612234180252938077, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Special
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_RootOrder
@@ -25,27 +25,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -25.34
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: -105.83653
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -105,18 +105,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
---- !u!1 &2467006606502205808 stripped
+--- !u!1 &209708055289304822 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1612234180252938077, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
-  m_PrefabInstance: {fileID: 3774965374855099949}
+  m_PrefabInstance: {fileID: 1492598221329316267}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1300441357
+--- !u!54 &72906008
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467006606502205808}
+  m_GameObject: {fileID: 209708055289304822}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -126,65 +126,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &930342114
+--- !u!65 &2124986615
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467006606502205808}
+  m_GameObject: {fileID: 209708055289304822}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1300441354
+  m_Size: {x: 2.7, y: 2.7, z: 2.7}
+  m_Center: {x: 0, y: -0.2, z: 0}
+--- !u!114 &72906014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467006606502205808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d123290d2c954e818b6bdd65bbd6722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 2
-  currentHealth: 0
---- !u!114 &1300441355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467006606502205808}
+  m_GameObject: {fileID: 209708055289304822}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b72e1d5ee1fd348be97cfabffe817158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 985376243261454171, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
-  playerHP: {fileID: 985376243261454166, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
-  enemyHP: {fileID: 1300441354}
-  agent: {fileID: 1300441356}
-  target: {fileID: 985376243261454167, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
+  player: {fileID: 0}
+  playerHP: {fileID: 0}
+  enemyHP: {fileID: 72906015}
+  agent: {fileID: 72906009}
+  target: {fileID: 0}
   lookRadius: 10
   damageAmt: 1
   hitCooldown: 1
   distance: 0
---- !u!195 &1300441356
+--- !u!114 &72906015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209708055289304822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d123290d2c954e818b6bdd65bbd6722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 6
+  currentHealth: 0
+--- !u!195 &72906009
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467006606502205808}
+  m_GameObject: {fileID: 209708055289304822}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3
+  m_Radius: 1.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -192,7 +192,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
+  m_Height: 3
+  m_BaseOffset: 1.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

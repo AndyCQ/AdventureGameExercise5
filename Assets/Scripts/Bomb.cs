@@ -34,7 +34,7 @@ public class Bomb : MonoBehaviour
             if (nearby.tag == "Breakable") {
                 Destroy(nearby.gameObject);
             }
-            if (nearby.tag == "Enemy") {
+            if (nearby.tag == "Enemy" || nearby.tag == "Special") {
                 //Add forces
                 Rigidbody rb = nearby.GetComponent<Rigidbody>();
                 if (rb != null) {
@@ -42,7 +42,7 @@ public class Bomb : MonoBehaviour
                 }
                 //Damage
                 EnemyHealth enemies = nearby.GetComponent<EnemyHealth>();
-                enemies.takeDamage(3f);
+                enemies.takeDamage(3);
             }
         }
 
