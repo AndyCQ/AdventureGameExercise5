@@ -12,7 +12,7 @@ public class PlayerCode : MonoBehaviour
     public float swordSpeed = 100;
     public float bombSpeed = 100;
     public float bombs = 3;
-    public float swordCooldown = 2;
+    public float swordCooldown = 0.75f;
     Camera mainCam;
     
     //HealthBar Vars
@@ -27,6 +27,7 @@ public class PlayerCode : MonoBehaviour
     {
         mainCam = Camera.main;
     }
+
     void Update() 
     {
         if(Input.GetMouseButton(1)){   
@@ -36,13 +37,14 @@ public class PlayerCode : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0) && swordCooldown <= 0){
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 transform.LookAt(hit.point);
                 GameObject newSword = Instantiate(sword,transform.position,transform.rotation);
                 newSword.GetComponent<Rigidbody>().AddForce(transform.forward * swordSpeed);
             }
+            Invoke("refreshTimer", 0.001f);
             //sword slash since regular sword system doesn't work
         }
         if(Input.GetKeyDown("space") & bombs > 0) {
@@ -56,13 +58,15 @@ public class PlayerCode : MonoBehaviour
         }
     }
 
-    /*
+    void refreshTimer() {
+        swordCooldown = 0.75f;
+    }
+
     void FixedUpdate() {
         if (swordCooldown > 0) {
             swordCooldown -= Time.deltaTime;
         }
     }
-    */
 
     public void playerDamage(float amount) {
         health -= amount;
