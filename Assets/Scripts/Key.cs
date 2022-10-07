@@ -8,6 +8,7 @@ public class Key : MonoBehaviour
         if (other.tag == "Player") {
            Destroy(gameObject);
            count.keyCount += 1;
+           PublicVars.keysAvailable +=1;
         }
     }
 }
