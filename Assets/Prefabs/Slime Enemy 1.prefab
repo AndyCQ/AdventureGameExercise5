@@ -154,6 +154,8 @@ MonoBehaviour:
   maxHealth: 2
   currentHealth: 0
   player: {fileID: 0}
+  red_: {fileID: 2100000, guid: af0353b05fd29ad4ea76b541516c9d3f, type: 2}
+  green_: {fileID: 2100000, guid: 0e3713a2f0a6e6e47ae5e540a6da9e72, type: 2}
 --- !u!114 &1300441355
 MonoBehaviour:
   m_ObjectHideFlags: 0
