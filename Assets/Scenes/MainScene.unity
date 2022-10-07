@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5490601, g: 0.78048486, b: 0.7766645, a: 1}
+  m_IndirectSpecularColor: {r: 0.5490158, g: 0.7804875, b: 0.7766467, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5624,6 +5624,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1278148155}
+    - target: {fileID: 1300441355, guid: d7de3b9a312250943979e56c0db68365, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1278148162}
+    - target: {fileID: 1300441355, guid: d7de3b9a312250943979e56c0db68365, type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 1278148157}
     - target: {fileID: 2467006606502205808, guid: d7de3b9a312250943979e56c0db68365, type: 3}
       propertyPath: m_Name
       value: Slime Enemy 1
@@ -9371,7 +9379,7 @@ Transform:
   - {fileID: 1532456773}
   - {fileID: 1563204581}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1036317523
 GameObject:
@@ -11444,7 +11452,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 985376243261454167, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 985376243261454167, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11508,6 +11516,22 @@ Transform:
 --- !u!1 &1278148155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 985376243261454171, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
+  m_PrefabInstance: {fileID: 1270644262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1278148157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 985376243261454166, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
+  m_PrefabInstance: {fileID: 1270644262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278148155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a67fc856a65a400dbe366e99c2b20b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1278148162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 985376243261454167, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
   m_PrefabInstance: {fileID: 1270644262}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1283848023
@@ -14969,7 +14993,7 @@ Transform:
   - {fileID: 791248365}
   - {fileID: 1017911047}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1569334154
 PrefabInstance:
@@ -19040,7 +19064,7 @@ Transform:
   - {fileID: 774786789}
   - {fileID: 1077374562}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1894964146
 PrefabInstance:
@@ -20705,7 +20729,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2060515745
 PrefabInstance:
