@@ -13,6 +13,7 @@ public class Door : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player" && keyCount == keys.Length) {
             Destroy(gameObject);
+            PublicVars.keysAvailable -=1;
         }
     }
 }

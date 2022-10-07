@@ -26,11 +26,13 @@ public class PlayerCode : MonoBehaviour
 
     //Canvas Vars
     public TextMeshProUGUI bombAmount;
+    public TextMeshProUGUI KeyAmount;
 
     void Start()
     {
         mainCam = Camera.main;
         bombAmount.text = "x " + bombs;
+        KeyAmount.text = "x " + PublicVars.keysAvailable;
     }
 
     void Update() 
@@ -61,6 +63,7 @@ public class PlayerCode : MonoBehaviour
                 newBomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombSpeed);
             }
         }
+
         bombAmount.text = "x " + bombs;
     }
 
@@ -72,6 +75,10 @@ public class PlayerCode : MonoBehaviour
         if (swordCooldown > 0) {
             swordCooldown -= Time.deltaTime;
         }
+        if(health <= 0){
+            SceneManager.LoadScene("DeathScreen");
+        }
+        KeyAmount.text = "x " + PublicVars.keysAvailable;
     }
 
     public void playerDamage(float amount) {
@@ -79,17 +86,4 @@ public class PlayerCode : MonoBehaviour
         healthBar.UpdateHealthBar();
         Debug.Log("Hit");
     }
-    /*
-    void takeDamage(Collider enemy){
-        if (enemy.CompareTag("Enemy")){
-                print("hit");
-                health -= 5;
-                healthBar.UpdateHealthBar();
-                if (health <= 0)
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                }
-                }
-    }
-    */
 }
