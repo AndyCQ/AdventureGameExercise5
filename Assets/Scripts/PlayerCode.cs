@@ -54,7 +54,6 @@ public class PlayerCode : MonoBehaviour
         }
         if(Input.GetKeyDown("space") & bombs > 0) {
             bombs -= 1;
-            bombAmount.text = "x " + bombs;
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 transform.LookAt(hit.point);
@@ -62,6 +61,7 @@ public class PlayerCode : MonoBehaviour
                 newBomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombSpeed);
             }
         }
+        bombAmount.text = "x " + bombs;
     }
 
     void refreshTimer() {

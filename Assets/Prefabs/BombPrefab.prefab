@@ -131,6 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: 3
-  blastRadius: 4
+  blastRadius: 5
   force: 700
   explosionEffect: {fileID: 7146024965380779426, guid: ef4f43979821249378a639edca031bec, type: 3}
