@@ -13,7 +13,7 @@ public class EnemyCode : MonoBehaviour
     public float lookRadius = 5f;
     public float damageAmt = 1f;
     public float hitCooldown = 1f;
-    public float distance;
+    public float distance = 500f;
 
     void Update() {
         if (distance < lookRadius) {

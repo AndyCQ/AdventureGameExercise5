@@ -33,6 +33,17 @@ public class PlayerCode : MonoBehaviour
         mainCam = Camera.main;
         bombAmount.text = "x " + bombs;
         KeyAmount.text = "x " + PublicVars.keysAvailable;
+
+        if(PublicVars.checkpoint == 0){
+            gameObject.transform.position = new Vector3(-13f,0f,45f);
+        }
+        if(PublicVars.checkpoint == 1){
+            gameObject.transform.position = new Vector3(-13f,0f,-62.7f);
+        }
+        if(PublicVars.checkpoint == 2){
+            gameObject.transform.position = new Vector3(-13f,0f,-118.3f);
+        }
+        
     }
 
     void Update() 

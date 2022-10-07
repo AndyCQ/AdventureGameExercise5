@@ -174,7 +174,7 @@ MonoBehaviour:
   lookRadius: 10
   damageAmt: 2
   hitCooldown: 1
-  distance: 0
+  distance: 500
 --- !u!195 &1300441356
 NavMeshAgent:
   m_ObjectHideFlags: 0

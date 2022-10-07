@@ -13,7 +13,7 @@ public class BossCode : MonoBehaviour
     public float lookRadius = 5f;
     public float damageAmt = 1f;
     public float hitCooldown = 1f;
-    public float distance;
+    public float distance = 500f;
     public int spawnNum = 0;
     public int spawnLimit = 2;
     public GameObject slime;

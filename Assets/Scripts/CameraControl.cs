@@ -10,6 +10,16 @@ public class CameraControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(PublicVars.checkpoint == 0){
+            gameObject.transform.position = new Vector3(-20.64f,9.07f,44.4f);
+        }
+        if(PublicVars.checkpoint == 1){
+            gameObject.transform.position = new Vector3(-20.64f,9.07f,-63.3f);
+        }
+        if(PublicVars.checkpoint == 2){
+            gameObject.transform.position = new Vector3(-20.64f,9.07f,-118.9f);
+        }
+
         playerCharacter = player.transform;
         offSet = transform.position - playerCharacter.position;
     }
