@@ -8,14 +8,20 @@ public class EnemyCode : MonoBehaviour
     public PlayerCode playerHP;
     public EnemyHealth enemyHP;
     public NavMeshAgent agent;
+    public Transform target;
+    public float lookRadius = 5f;
     public float damageAmt = 1f;
     public float hitCooldown = 1f;
+    public float distance;
 
-    void Start() {
-        StartCoroutine(LookForPlayer());
+    void Update() {
+        if (distance < lookRadius) {
+            StartCoroutine(LookForPlayer());
+        }
     }
 
     void FixedUpdate() {
+        distance = Vector3.Distance(target.position,transform.position);
         if (hitCooldown > 0) {
             hitCooldown -= Time.deltaTime;
         }
