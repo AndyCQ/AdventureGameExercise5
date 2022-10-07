@@ -9,6 +9,7 @@ TagManager:
   - Breakable
   - Sword
   - Special
+  - Boss
   layers:
   - Default
   - TransparentFX

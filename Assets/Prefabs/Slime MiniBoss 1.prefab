@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612234180252938077, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_Name
-      value: Slime MiniBoss
+      value: Slime MiniBoss 1
       objectReference: {fileID: 0}
     - target: {fileID: 1612234180252938077, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_TagString
@@ -139,6 +139,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7, y: 2.7, z: 2.7}
   m_Center: {x: 0, y: -0.2, z: 0}
+--- !u!195 &72906009
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209708055289304822}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 3
+  m_BaseOffset: 1.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &72906014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,25 +196,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   currentHealth: 0
---- !u!195 &72906009
-NavMeshAgent:
+--- !u!114 &2362996161767767482
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209708055289304822}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 1.5
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 3
-  m_BaseOffset: 1.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9f4272551c15646866dfccf841144d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: {fileID: 0}
+  bomb: {fileID: 7208494524803779700, guid: 379f7a1bf14063f44abc86062b275680, type: 3}
+  crown: {fileID: 0}
