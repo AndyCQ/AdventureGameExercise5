@@ -36,10 +36,12 @@ public class Bomb : MonoBehaviour
             }
             if (nearby.tag == "Enemy") {
                 //Add forces
+                /*
                 Rigidbody rb = nearby.GetComponent<Rigidbody>();
                 if (rb != null) {
                     rb.AddExplosionForce(force, transform.position, blastRadius);
                 }
+                */
                 //Damage
                 EnemyHealth enemies = nearby.GetComponent<EnemyHealth>();
                 enemies.takeDamage(3f);
