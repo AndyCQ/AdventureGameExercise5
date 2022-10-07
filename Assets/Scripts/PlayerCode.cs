@@ -12,6 +12,7 @@ public class PlayerCode : MonoBehaviour
     public float swordSpeed = 100;
     public float bombSpeed = 100;
     public float bombs = 3;
+    public float swordCooldown = 2;
     Camera mainCam;
     
     //HealthBar Vars
@@ -42,7 +43,6 @@ public class PlayerCode : MonoBehaviour
                 GameObject newSword = Instantiate(sword,transform.position,transform.rotation);
                 newSword.GetComponent<Rigidbody>().AddForce(transform.forward * swordSpeed);
             }
-            
             //sword slash since regular sword system doesn't work
         }
         if(Input.GetKeyDown("space") & bombs > 0) {
@@ -55,6 +55,14 @@ public class PlayerCode : MonoBehaviour
             }
         }
     }
+
+    /*
+    void FixedUpdate() {
+        if (swordCooldown > 0) {
+            swordCooldown -= Time.deltaTime;
+        }
+    }
+    */
 
     public void playerDamage(float amount) {
         health -= amount;

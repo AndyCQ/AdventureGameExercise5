@@ -6,6 +6,7 @@ public class EnemyCode : MonoBehaviour
 {
     public GameObject player;
     public PlayerCode playerHP;
+    public EnemyHealth enemyHP;
     public NavMeshAgent agent;
     public float damageAmt = 1f;
     public float hitCooldown = 1f;
@@ -31,6 +32,9 @@ public class EnemyCode : MonoBehaviour
         if (other.tag == "Player" && hitCooldown <= 0) {
             hitCooldown = 1f;
             playerHP.playerDamage(damageAmt);
+        }
+        if (other.tag == "Sword") {
+            enemyHP.takeDamage(1);
         }
     }
 }
