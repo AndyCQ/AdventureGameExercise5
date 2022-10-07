@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class PlayerCode : MonoBehaviour
@@ -23,9 +24,13 @@ public class PlayerCode : MonoBehaviour
     //float delay = 2f;
     //float time = 0f;
 
+    //Canvas Vars
+    public TextMeshProUGUI bombAmount;
+
     void Start()
     {
         mainCam = Camera.main;
+        bombAmount.text = "x " + bombs;
     }
 
     void Update() 
@@ -49,6 +54,7 @@ public class PlayerCode : MonoBehaviour
         }
         if(Input.GetKeyDown("space") & bombs > 0) {
             bombs -= 1;
+            bombAmount.text = "x " + bombs;
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 transform.LookAt(hit.point);
