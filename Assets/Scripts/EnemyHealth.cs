@@ -25,9 +25,8 @@ public class EnemyHealth : MonoBehaviour
             if(gameObject.tag == "Boss"){
                 gameObject.GetComponent<MobDrop>().bossDrop();
             }
-            print(player.GetComponent<PlayerCode>().health);
             player.GetComponent<PlayerCode>().health += 1;
-            print(player.GetComponent<PlayerCode>().health);
+            player.GetComponent<PlayerCode>().healthBar.UpdateHealthBar();
             Destroy(gameObject);
         }
     }

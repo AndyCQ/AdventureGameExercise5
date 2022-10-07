@@ -144,8 +144,8 @@ MonoBehaviour:
   bombSpeed: 100
   bombs: 3
   swordCooldown: 2
-  health: 5
-  maxHealth: 5
+  health: 8
+  maxHealth: 8
   healthBar: {fileID: 0}
   bombAmount: {fileID: 0}
   KeyAmount: {fileID: 0}

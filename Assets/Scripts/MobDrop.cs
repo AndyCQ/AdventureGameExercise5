@@ -15,13 +15,12 @@ public class MobDrop : MonoBehaviour
     }
 
     public void startBattle() {
-        //link.GetComponent<MeshRenderer>().enabled = true;
-        //link.GetComponent<NavMeshObstacle>().enabled = true;
-        //gameObject.GetComponent<Navmesh
+        link.GetComponent<MeshRenderer>().enabled = true;
+        link.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = true;
     }
 
     public void bossDrop() {
         GameObject newCrown = Instantiate(crown,gameObject.transform.position,gameObject.transform.rotation);
-        startBattle();
+        newCrown.transform.position = new Vector3(newCrown.transform.position.x, newCrown.transform.position.y-1.5f, newCrown.transform.position.z);
     }
 }
