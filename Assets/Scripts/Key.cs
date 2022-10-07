@@ -3,11 +3,13 @@ using TMPro;
 
 public class Key : MonoBehaviour
 {
-    public Door count;
+    public Door count = None;
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
            Destroy(gameObject);
-           count.keyCount += 1;
+           if(count != None){
+            count.keyCount += 1;
+           }
         }
     }
 }
