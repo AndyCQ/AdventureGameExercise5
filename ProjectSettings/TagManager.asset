@@ -10,6 +10,7 @@ TagManager:
   - Sword
   - Special
   - Boss
+  - Music
   layers:
   - Default
   - TransparentFX
