@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1612234180252938077, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_TagString
-      value: Special
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2095333663083886055, guid: 52580a290ecf02e4f8c12cf087e0c0be, type: 3}
       propertyPath: m_RootOrder
@@ -149,7 +149,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.5
-  m_Speed: 3
+  m_Speed: 4.2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -154,8 +154,6 @@ MonoBehaviour:
   maxHealth: 2
   currentHealth: 0
   player: {fileID: 0}
-  red_: {fileID: 2100000, guid: af0353b05fd29ad4ea76b541516c9d3f, type: 2}
-  green_: {fileID: 2100000, guid: 0e3713a2f0a6e6e47ae5e540a6da9e72, type: 2}
 --- !u!114 &1300441355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,11 +166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72e1d5ee1fd348be97cfabffe817158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 985376243261454171, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
-  playerHP: {fileID: 985376243261454166, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
+  player: {fileID: 0}
+  playerHP: {fileID: 0}
   enemyHP: {fileID: 1300441354}
   agent: {fileID: 1300441356}
-  target: {fileID: 985376243261454167, guid: 0e210bc917f734358886b07c117bfaa0, type: 3}
+  target: {fileID: 0}
   lookRadius: 10
   damageAmt: 2
   hitCooldown: 1
@@ -187,7 +185,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 5
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
